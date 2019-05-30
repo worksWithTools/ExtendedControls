@@ -516,9 +516,11 @@ namespace ExtendedControls
             dropdown.Activated += (s,ea) => 
             {
                 Point location = panelListSelection.PointToScreen(new Point(0, 0));
-                dropdown.Location = dropdown.PositionWithinScreen(location.X + panelListSelection.Width, location.Y);
+                dropdown.PositionWithinScreen(location.X + panelListSelection.Width, location.Y);
                 this.Invalidate(true);
             };
+            dropdown.PositionBelow(panelListSelection);
+
             dropdown.SelectedIndexChanged += (s, ea) =>
             {
                 tdm = TabDisplayMode.Expanded;              // deactivate drop down.. leave in expanded mode

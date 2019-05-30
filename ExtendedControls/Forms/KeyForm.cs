@@ -44,7 +44,7 @@ namespace ExtendedControls
         int curinsertpoint = 0;
         string seperator;
         const string DefaultProcessID = "Default";
-        BaseUtils.EnhancedSendKeysParser.IAdditionalKeyParser additionalkeyparser;
+        BaseUtils.IAdditionalKeyParser additionalkeyparser;
 
         public KeyForm()
         {
@@ -63,7 +63,7 @@ namespace ExtendedControls
                                 int defdelay = 50,     // -1 means program default, return -1 back
                                 bool allowkeysedit = false,
                                 List<string> additionalkeys = null,
-                                BaseUtils.EnhancedSendKeysParser.IAdditionalKeyParser parser = null)
+                                BaseUtils.IAdditionalKeyParser parser = null)
         {
             if ( i != null )
                 Icon = i;
