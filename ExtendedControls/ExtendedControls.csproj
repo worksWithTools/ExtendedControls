@@ -38,5 +38,4 @@
     <None Include="Resources\ArrowUp.png" />
     <Folder Include="Properties\" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

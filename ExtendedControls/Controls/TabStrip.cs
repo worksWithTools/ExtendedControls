@@ -519,7 +519,7 @@ namespace ExtendedControls
                 dropdown.PositionWithinScreen(location.X + panelListSelection.Width, location.Y);
                 this.Invalidate(true);
             };
-            dropdown.PositionBelow(panelListSelection);
+            //dropdown.PositionBelow(panelListSelection);
 
             dropdown.SelectedIndexChanged += (s, ea) =>
             {
