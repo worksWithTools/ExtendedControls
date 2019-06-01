@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright © 2016 EDDiscovery development team
+ * Copyright © 2016-2019 EDDiscovery development team
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
  * file except in compliance with the License. You may obtain a copy of the License at
@@ -14,18 +14,14 @@
  * EDDiscovery is not affiliated with Frontier Developments plc.
  */
 
+using BaseUtils;
 using BaseUtils.Win32Constants;
-using ExtendedControls;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ExtendedControls
@@ -44,7 +40,7 @@ namespace ExtendedControls
         int curinsertpoint = 0;
         string seperator;
         const string DefaultProcessID = "Default";
-        BaseUtils.IAdditionalKeyParser additionalkeyparser;
+        IAdditionalKeyParser additionalkeyparser;
 
         public KeyForm()
         {
@@ -63,7 +59,7 @@ namespace ExtendedControls
                                 int defdelay = 50,     // -1 means program default, return -1 back
                                 bool allowkeysedit = false,
                                 List<string> additionalkeys = null,
-                                BaseUtils.IAdditionalKeyParser parser = null)
+                                IAdditionalKeyParser parser = null)
         {
             if ( i != null )
                 Icon = i;
@@ -108,7 +104,7 @@ namespace ExtendedControls
             ITheme theme = ThemeableFormsInstance.Instance;
             if (theme != null)  // paranoid
             {
-                border = theme.ApplyToFormStandardFontSize(this);
+                border = theme.ApplyDialog(this);
             }
 
             labelCaption.Visible = !border;
